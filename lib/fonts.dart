@@ -1,10 +1,9 @@
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class textapp extends StatelessWidget {
-  const textapp({ Key? key,
+   textapp({ Key? key,
   this.text,
   this.color,
   this.fontSize,
@@ -17,6 +16,8 @@ final String? text;
 final Color? color;
 final double? fontSize;
 // final IconButton? iconButton; 
+
+
 
 
 
