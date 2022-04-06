@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:s_plus/color.dart';
+import 'package:s_plus/AppColors/color.dart';
 
 class ButtonApp extends StatelessWidget {
   final String buttonText;
@@ -31,11 +31,11 @@ class ButtonApp extends StatelessWidget {
             end: Alignment.center,
             stops: const [0.0, 1.0],
             colors: [
-              app_color.primarycolor.withOpacity(1.0),
-              app_color.secondcolor.withOpacity(0.5),
+              AppColor.primarycolor.withOpacity(1.0),
+              AppColor.secondcolor.withOpacity(0.5),
             ],
           ),
-          color: app_color.primarycolor,
+          color: AppColor.primarycolor,
           borderRadius: BorderRadius.circular(10),
         ),
         child: ElevatedButton(

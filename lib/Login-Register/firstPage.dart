@@ -9,7 +9,7 @@ class FirstPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: CustomBoxDecoration.boxDecoration,
+      //decoration: CustomBoxDecoration.boxDecoration,
       child: const Scaffold(
         backgroundColor: Colors.transparent,
       ),
