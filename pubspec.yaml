@@ -39,6 +39,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   hexcolor: ^2.0.6
   google_fonts: ^2.3.1
+  flutter_svg: ^1.0.2
   
   
 
@@ -69,7 +70,7 @@ flutter:
     - lib/imagesicon/alarm.png
     - lib/imagesicon/home.png
     - lib/imagesicon/add.png
-  
+    - Images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:s_plus/color.dart';
 
-
 class ButtonApp extends StatelessWidget {
   final String buttonText;
   final double width;

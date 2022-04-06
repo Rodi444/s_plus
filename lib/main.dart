@@ -4,18 +4,24 @@ import 'package:flutter/material.dart';
 import 'package:s_plus/navigationbar.dart';
 import 'button.dart';
 import 'gridview.dart';
+import 'package:s_plus/Home/home_page.dart';
+import 'package:s_plus/Login-Register/firstPage.dart';
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MaterialApp(
-initialRoute: "/",
-
-routes: {
-  "/":(context) => const Navigation(),
-  "/kGridView":(context) => kGridView(),
-},
-  ));
+  runApp(const MyApp());
 }
 
-    
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: HomeBackgroundLight(),
+    );
+  }
+}
