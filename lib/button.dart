@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:s_plus/color.dart';
-import 'navigatorbar.dart';
+
 
 class ButtonApp extends StatelessWidget {
   final String buttonText;
