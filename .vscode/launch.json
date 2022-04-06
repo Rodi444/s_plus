@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "SPlus",
+            "name": "s_plus",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "SPlus (profile mode)",
+            "name": "s_plus (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "SPlus (release mode)",
+            "name": "s_plus (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
