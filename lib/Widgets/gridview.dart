@@ -19,123 +19,32 @@ class kGridView extends StatelessWidget {
       width: 10,
       padding: const EdgeInsets.all(8),
       child: const Text("He'd have you all unravel at the"),
-      decoration: BoxDecoration(
-          boxShadow:const [
-            BoxShadow(
-                color: Color.fromARGB(40, 0, 0, 0), offset: Offset(0, 4), blurRadius: 4.0)],
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.center,
-            stops: const [0.0, 1.0],
-            colors: [
-              AppColor.primarycolor.withOpacity(1.0),
-              AppColor.secondcolor.withOpacity(0.5),
-            ],
-          ),
-          color: AppColor.primarycolor,
-          borderRadius: BorderRadius.circular(10),
-        ),
+      decoration: AppColor.gradient,
     ),
     Container(
       padding: const EdgeInsets.all(8),
       child: const Text('Heed not the rabble'),
-      decoration: BoxDecoration(
-          boxShadow:const [
-            BoxShadow(
-                color: Color.fromARGB(40, 0, 0, 0), offset: Offset(0, 4), blurRadius: 4.0)],
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.center,
-            stops: const [0.0, 1.0],
-            colors: [
-              AppColor.primarycolor.withOpacity(1.0),
-              AppColor.secondcolor.withOpacity(0.5),
-            ],
-          ),
-          color: AppColor.primarycolor,
-          borderRadius: BorderRadius.circular(10),
-        ),
+      decoration: AppColor.gradient,
     ),
     Container(
       padding: const EdgeInsets.all(8),
       child: const Text('Sound of screams but the'),
-     
-      decoration: BoxDecoration(
-          boxShadow:const [
-            BoxShadow(
-                color: Color.fromARGB(40, 0, 0, 0), offset: Offset(0, 4), blurRadius: 4.0)],
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.center,
-            stops: const [0.0, 1.0],
-            colors: [
-              AppColor.primarycolor.withOpacity(1.0),
-              AppColor.secondcolor.withOpacity(0.5),
-            ],
-          ),
-          color: AppColor.primarycolor,
-          borderRadius: BorderRadius.circular(10),
-        ),
+      decoration:AppColor.gradient,
     ),
     Container(
       padding: const EdgeInsets.all(8),
       child: const Text('Who scream'),
-      decoration: BoxDecoration(
-          boxShadow:const [
-            BoxShadow(
-                color: Color.fromARGB(40, 0, 0, 0), offset: Offset(0, 4), blurRadius: 4.0)],
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.center,
-            stops: const [0.0, 1.0],
-            colors: [
-              AppColor.primarycolor.withOpacity(1.0),
-              AppColor.secondcolor.withOpacity(0.5),
-            ],
-          ),
-          color: AppColor.primarycolor,
-          borderRadius: BorderRadius.circular(10),
-        ),
+      decoration: AppColor.gradient,
     ),
     Container(
       padding: const EdgeInsets.all(8),
       child: const Text('Revolution is coming...'),
-      decoration: BoxDecoration(
-          boxShadow:const [
-            BoxShadow(
-                color: Color.fromARGB(40, 0, 0, 0), offset: Offset(0, 4), blurRadius: 4.0)],
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.center,
-            stops: const [0.0, 1.0],
-            colors: [
-              AppColor.primarycolor.withOpacity(1.0),
-              AppColor.secondcolor.withOpacity(0.5),
-            ],
-          ),
-          color: AppColor.primarycolor,
-          borderRadius: BorderRadius.circular(10),
-        ),
+      decoration: AppColor.gradient,
     ),
     Container(
       padding: const EdgeInsets.all(8),
       child: const Text('Revolution, they...'),
-      decoration: BoxDecoration(
-          boxShadow:const [
-            BoxShadow(
-                color: Color.fromARGB(40, 0, 0, 0), offset: Offset(0, 4), blurRadius: 4.0)],
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.center,
-            stops: const [0.0, 1.0],
-            colors: [
-              AppColor.primarycolor.withOpacity(1.0),
-              AppColor.secondcolor.withOpacity(0.5),
-            ],
-          ),
-          color: AppColor.primarycolor,
-          borderRadius: BorderRadius.circular(10),
-        ),
+      decoration: AppColor.gradient,
     ),
   ],
 );
