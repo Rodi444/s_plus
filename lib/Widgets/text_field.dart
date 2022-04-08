@@ -19,7 +19,8 @@ class GlobalTextField extends StatefulWidget {
     required this.fontSize,
     required this.maxLines,
     required this.isPassword,
-    required this.hint, this.onChanged,
+    required this.hint,
+    this.onChanged,
   }) : super(key: key);
 
   @override
@@ -31,8 +32,7 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: widget.height,
+    return SizedBox(
       width: widget.width,
       child: TextField(
         onChanged: widget.onChanged,
@@ -41,20 +41,22 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
         style: TextStyle(
           fontFamily: 'lato',
           fontSize: widget.fontSize,
+          color: Color.fromARGB(255, 0, 0, 0),
         ),
         maxLines: widget.maxLines,
         obscureText: widget.isPassword,
         decoration: InputDecoration(
-            hintText: widget.hint,
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(50),
-            ),
-            errorBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.red))),
+          filled: true,
+          hintText: widget.hint,
+          fillColor: Colors.white,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(50),
+          ),
+          errorBorder: const OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.red),
+          ),
+        ),
       ),
-      decoration: const BoxDecoration(boxShadow: [
-        BoxShadow(color: Colors.black, blurRadius: 4, offset: Offset(0, 4))
-      ]),
     );
   }
 }
