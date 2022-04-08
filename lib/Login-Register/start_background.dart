@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:s_plus/theme.dart';
+import 'package:s_plus/AppColors/theme.dart';
 
 class CustomBoxDecoration {
   static BoxDecoration boxDecoration =  BoxDecoration(

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:s_plus/color.dart';
+import 'package:s_plus/AppColors/color.dart';
 
-class ButtonApp extends StatelessWidget {
+class MainButtonApp extends StatelessWidget {
   final String buttonText;
   final double width;
   final Function onpressed;
   final double height;
   final double fontSize;
 
-  ButtonApp({
+  MainButtonApp({
     required this.buttonText,
     required this.width,
     required this.height,
@@ -20,22 +20,13 @@ class ButtonApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(30.0),
+      padding: const EdgeInsets.all(5.0),
       child: Container(
         decoration: BoxDecoration(
           boxShadow:const [
             BoxShadow(
                 color: Color.fromARGB(40, 0, 0, 0), offset: Offset(0, 4), blurRadius: 4.0)],
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.center,
-            stops: const [0.0, 1.0],
-            colors: [
-              app_color.primarycolor.withOpacity(1.0),
-              app_color.secondcolor.withOpacity(0.5),
-            ],
-          ),
-          color: app_color.primarycolor,
+          color: const Color.fromARGB(255, 112, 99, 198),
           borderRadius: BorderRadius.circular(10),
         ),
         child: ElevatedButton(
@@ -63,6 +54,7 @@ class ButtonApp extends StatelessWidget {
             child: Text(
               buttonText,
               style: GoogleFonts.lato(
+                fontWeight: FontWeight.bold,
                 fontSize: fontSize,
                 fontStyle: FontStyle.normal,
                 // fontWeight: FontWeight.w700,
