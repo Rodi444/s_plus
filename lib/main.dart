@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:s_plus/Widgets/navigationbar.dart';
 import 'Widgets/button.dart';
 import 'Widgets/gridview.dart';
-import 'package:s_plus/Home/home_page.dart';
+import 'package:s_plus/Home/home_page_light.dart';
 import 'package:s_plus/Login-Register/firstPage.dart';
 
 
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: HomeBackgroundLight(),
+      home: HomeBackgroundDark(),
     );
   }
 }
