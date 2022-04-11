@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
 
-class kAppBars extends StatelessWidget {
+class kAppBars extends StatefulWidget {
   const kAppBars({ Key? key }) : super(key: key);
 
+  @override
+  State<kAppBars> createState() => _kAppBarsState();
+}
+
+bool _iconBool = false;
+
+IconData _iconLight = Icons.wb_sunny;
+IconData _iconDark = Icons.nights_stay;
+
+
+
+class _kAppBarsState extends State<kAppBars> {
   @override
   Widget build(BuildContext context) {
     return AppBar(   
@@ -13,11 +25,13 @@ class kAppBars extends StatelessWidget {
       ),
       actions: [
         IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.search,
-            size: 36,
-          ),
+          onPressed: () {
+            setState(() {
+              _iconBool = !_iconBool;
+            });
+            
+          },
+          icon: Icon(_iconBool? _iconDark : _iconLight)
         ),
       ],
       backgroundColor: Colors.transparent,

@@ -4,13 +4,25 @@ import 'package:s_plus/pages/addforum.dart';
 import 'package:s_plus/Widgets/bottom_navigation.dart';
 import 'package:s_plus/Widgets/drawer.dart';
 import 'package:s_plus/Widgets/switchhome.dart';
+import 'package:s_plus/theme_app/config.dart';
 
-class HomeBackgroundDark extends StatelessWidget {
+class HomeBackgroundDark extends StatefulWidget {
   const HomeBackgroundDark({Key? key}) : super(key: key);
+
+  @override
+  State<HomeBackgroundDark> createState() => _HomeBackgroundDarkState();
+}
+bool iconBool = false;
+
+IconData _iconLight = Icons.wb_sunny;
+IconData _iconDark = Icons.nights_stay;
+
+
+class _HomeBackgroundDarkState extends State<HomeBackgroundDark> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: LightBoxDecoration.darkBoxDecoration,
+      // decoration: BoxDecoration(),
       child: Scaffold(
         drawer: AppDrawer.appdrawer,
         appBar: AppBar(   
@@ -21,11 +33,14 @@ class HomeBackgroundDark extends StatelessWidget {
       ),
       actions: [
         IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.search,
-            size: 36,
-          ),
+          onPressed: () {
+            setState(() {
+              currentTheme.switchTheme();
+              iconBool =!iconBool;
+
+            });
+          },
+          icon: Icon(iconBool? _iconDark : _iconLight)
         ),
       ],
       backgroundColor: Colors.transparent,

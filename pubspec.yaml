@@ -41,6 +41,10 @@ dependencies:
   google_fonts: ^2.3.1
   flutter_svg: ^1.0.2
   email_validator: ^2.0.1
+  shared_preferences: ^2.0.13
+  provider: ^6.0.2
+  get: ^4.6.1
+  flutter_bloc: ^8.0.1
   
   
 
@@ -71,6 +75,7 @@ flutter:
     - lib/imagesicon/alarm.png
     - lib/imagesicon/home.png
     - lib/imagesicon/add.png
+    - lib/imagesicon/perfil.png
     - Images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
