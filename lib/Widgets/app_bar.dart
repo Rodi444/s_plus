@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class AppBarGlobal extends StatelessWidget {
-  const AppBarGlobal({Key? key}) : super(key: key);
+class kAppBars extends StatelessWidget {
+  const kAppBars({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
+    return AppBar(   
       title: Image.asset(
         'Images/LogoS+.png',
         height: 55,
