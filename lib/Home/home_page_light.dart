@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:s_plus/AppColors/color.dart';
 import 'package:s_plus/Home/home_background_decoration.dart';
 import 'package:s_plus/pages/addforum.dart';
 import 'package:s_plus/Widgets/bottom_navigation.dart';
@@ -22,12 +23,12 @@ class _HomeBackgroundDarkState extends State<HomeBackgroundDark> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // decoration: BoxDecoration(),
+      decoration: LightBoxDecoration.background,
       child: Scaffold(
         drawer: AppDrawer.appdrawer,
         appBar: AppBar(   
       title: Image.asset(
-        'Images/LogoS+.png',
+        'Images/Logo_Grande.png',
         height: 55,
         alignment: Alignment.center,
       ),
@@ -37,7 +38,6 @@ class _HomeBackgroundDarkState extends State<HomeBackgroundDark> {
             setState(() {
               currentTheme.switchTheme();
               iconBool =!iconBool;
-
             });
           },
           icon: Icon(iconBool? _iconDark : _iconLight)
@@ -46,10 +46,11 @@ class _HomeBackgroundDarkState extends State<HomeBackgroundDark> {
       backgroundColor: Colors.transparent,
       centerTitle: true,
       elevation: 0,
+      iconTheme: IconThemeData(color: Color.fromARGB(255, 250, 175, 184)),
     ),
         backgroundColor: Colors.transparent,
-        body: const SwitchHome(),
-        bottomNavigationBar: const kNavigationBar(),
+        //body:
+        bottomNavigationBar: const KNavigationBar(),
         floatingActionButton: FloatingActionButton(onPressed: (){
           Navigator.push(
     context,
@@ -57,7 +58,8 @@ class _HomeBackgroundDarkState extends State<HomeBackgroundDark> {
   );
         },
         backgroundColor: const Color.fromARGB(255, 86, 92, 208),
-        child: const Icon(Icons.add, size: 40,),
+        child: const Icon(Icons.add, size: 40,
+        color: Color.fromARGB(255, 250, 175, 184),),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         ),

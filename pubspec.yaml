@@ -45,6 +45,7 @@ dependencies:
   provider: ^6.0.2
   get: ^4.6.1
   flutter_bloc: ^8.0.1
+  flex_color_scheme: ^4.2.0
   
   
 
@@ -76,7 +77,8 @@ flutter:
     - lib/imagesicon/home.png
     - lib/imagesicon/add.png
     - lib/imagesicon/perfil.png
-    - Images/
+    - Images/background.png
+    - Images/Logo_Grande.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

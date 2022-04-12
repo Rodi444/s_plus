@@ -4,6 +4,8 @@ import 'package:s_plus/Home/home_page_light.dart';
 //import 'package:s_plus/Login-Register/first_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:s_plus/theme_app/config.dart';
+import 'package:flex_color_scheme/flex_color_scheme.dart';
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,14 +26,6 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
-final themeChange = iconBool;
-
-ThemeData _lightTheme = ThemeData(
-  brightness: Brightness.light,
-);
-ThemeData _darkTheme = ThemeData(
-  brightness: Brightness.dark,
-);
 
 class _MyAppState extends State<MyApp> {
 
@@ -48,32 +42,17 @@ currentTheme.addListener(()
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.light(),
-      darkTheme: ThemeData.dark(),
+      theme: ThemeData(
+        inputDecorationTheme: InputDecorationTheme(iconColor: Colors.black),
+        brightness: Brightness.light,
+        ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+      ),
       themeMode: currentTheme.currentTheme(),
-      home:Scaffold(
-        
-    //     appBar: AppBar(   
-    //   title: Image.asset(
-    //     'Images/LogoS+.png',
-    //     height: 55,
-    //     alignment: Alignment.center,
-    //   ),
-    //   actions: [
-    //     IconButton(
-    //       onPressed: () {
-    //         setState(() {
-    //           _iconBool = !_iconBool;
-    //         });
-    //       },
-    //       icon: Icon(_iconBool? _iconDark : _iconLight)
-    //     ),
-    //   ],
-    //   backgroundColor: Colors.transparent,
-    //   centerTitle: true,
-    //   elevation: 0,
-    // ),
+      home: const Scaffold(
         body: HomeBackgroundDark(),
       ),
     );

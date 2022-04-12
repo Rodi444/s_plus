@@ -1,28 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:s_plus/pages/addforum.dart';
+import 'package:s_plus/AppColors/color.dart';
 
-class kNavigationBar extends StatelessWidget {
-  const kNavigationBar({ Key? key }) : super(key: key);
+class KNavigationBar extends StatefulWidget {
+  const KNavigationBar({ Key? key }) : super(key: key);
 
+  @override
+  State<KNavigationBar> createState() => _KNavigationBarState();
+}
+
+class _KNavigationBarState extends State<KNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-          color: const Color.fromARGB(165, 86, 92, 208),
+          color: Color.fromARGB(91, 86, 92, 208),
           shape: const CircularNotchedRectangle(),
-        child: Container(height: 70,
+        child: SizedBox (height: 70,
         child: BottomNavigationBar(
         showUnselectedLabels: false,
         showSelectedLabels: false, 
         backgroundColor: const Color.fromARGB(0, 0, 0, 0) ,
-          items: [
+          items: const [
             BottomNavigationBarItem(
-              icon: Image.asset("lib/imagesicon/home.png",
-              scale: 15,),
+              icon: Icon(Icons.home_rounded,
+              size: 40,
+              color: Color.fromARGB(255, 250, 175, 184),),
               label: '',
             ),
             BottomNavigationBarItem(
-              icon: Image.asset("lib/imagesicon/alarm.png",
-              scale: 15,),
+              icon: Icon(Icons.search,
+              size: 40,
+              color: Color.fromARGB(255, 250, 175, 184),),
               label: '',
             ),
         ]),),

@@ -9,10 +9,7 @@ class SwitchHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(children: [
-    Expanded(child: ElevatedButton(onPressed: (){Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => const HomeBackgroundDark()),
-  );},
+    Expanded(child: ElevatedButton(onPressed: (){Navigator.pop(context);},
     style: ButtonStyle(
       minimumSize: MaterialStateProperty.all(const Size(20, 30)),
               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -21,10 +18,10 @@ class SwitchHome extends StatelessWidget {
                 ),
               ),
               backgroundColor:
-                  MaterialStateProperty.all(Color.fromARGB(125, 86, 92, 208)),
+                  MaterialStateProperty.all(const Color.fromARGB(125, 86, 92, 208)),
               // elevation: MaterialStateProperty.all(3),
               shadowColor:
-                  MaterialStateProperty.all(Color.fromARGB(125, 86, 92, 208)),
+                  MaterialStateProperty.all(const Color.fromARGB(125, 86, 92, 208)),
                   ),
                   child:const Text('HOME', textAlign: TextAlign.center),
     ),
@@ -34,19 +31,19 @@ class SwitchHome extends StatelessWidget {
     MaterialPageRoute(builder: (context) => const SubscribedDark()),
   );},
     style: ButtonStyle(
-              minimumSize: MaterialStateProperty.all(Size(20, 30)),
+              minimumSize: MaterialStateProperty.all(const Size(20, 30)),
               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                 RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10.0),
                 ),
               ),
               backgroundColor:
-                  MaterialStateProperty.all(Color.fromARGB(125, 86, 92, 208)),
+                  MaterialStateProperty.all(const Color.fromARGB(125, 86, 92, 208)),
               // elevation: MaterialStateProperty.all(3),
               shadowColor:
-                  MaterialStateProperty.all(Color.fromARGB(125, 86, 92, 208)),
+                  MaterialStateProperty.all(const Color.fromARGB(125, 86, 92, 208)),
                   ),
-                  child:Text('SUBSCRIBED', textAlign: TextAlign.center),
+                  child:const Text('SUBSCRIBED', textAlign: TextAlign.center),
     ),
       )
   ]
