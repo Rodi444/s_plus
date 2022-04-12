@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:s_plus/Login-Register/first_page.dart';
+import 'package:s_plus/Home/home_page_light.dart';
 import 'package:s_plus/Login-Register/start_background.dart';
 import 'package:s_plus/Widgets/main_button.dart';
 import 'package:s_plus/Widgets/text_field.dart';
@@ -129,7 +129,7 @@ class RegisterQuestionPage extends StatelessWidget {
                       ).then(
                         (value) => Navigator.of(context)
                             .push(MaterialPageRoute(
-                                builder: (context) => const FirstPage()))
+                                builder: (context) => const HomeBackgroundDark())) 
                             .catchError(
                           (error) {
                             showDialog(

@@ -5,7 +5,7 @@ class TitleText extends StatelessWidget {
     final String tostring;
   final double fontsize;
 
-  TitleText({ Key? key,
+  const TitleText({ Key? key,
   required this.tostring,
   required this.fontsize
    }) : super(key: key);

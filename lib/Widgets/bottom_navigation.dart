@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:s_plus/pages/addforum.dart';
 
 class kNavigationBar extends StatelessWidget {
   const kNavigationBar({ Key? key }) : super(key: key);
@@ -9,7 +8,7 @@ class kNavigationBar extends StatelessWidget {
     return BottomAppBar(
           color: const Color.fromARGB(165, 86, 92, 208),
           shape: const CircularNotchedRectangle(),
-        child: Container(height: 70,
+        child: SizedBox(height: 70,
         child: BottomNavigationBar(
         showUnselectedLabels: false,
         showSelectedLabels: false, 

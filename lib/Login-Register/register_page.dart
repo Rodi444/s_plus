@@ -82,7 +82,7 @@ class RegisterPage extends StatelessWidget {
                   buttonText: 'CONFIRM',
                   width: 250,
                   onpressed: () async {
-                    if (password == confirmPassword) {
+                    if (password == confirmPassword && isValid) {
                       try {
                         UserCredential userCredential = await FirebaseAuth
                             .instance
@@ -90,7 +90,7 @@ class RegisterPage extends StatelessWidget {
                                 email: email, password: password);
                         showDialog(
                           context: context,
-                          builder: (context) {
+                          builder: (context) { 
                             return AlertDialog(
                               title: const Text('Registration Successful'),
                               actions: [

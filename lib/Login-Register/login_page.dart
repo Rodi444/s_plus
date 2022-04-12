@@ -1,4 +1,7 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
+import 'package:s_plus/Home/home_page_light.dart';
 import 'package:s_plus/Login-Register/start_background.dart';
 import 'package:s_plus/Widgets/main_button.dart';
 import 'package:s_plus/Widgets/text_field.dart';
@@ -14,7 +17,6 @@ class LoginPage extends StatelessWidget {
     String password = '';
     String email = '';
     bool isValid = EmailValidator.validate(email);
-
 
     return Container(
       decoration: CustomBoxDecoration.boxDecoration,
@@ -65,6 +67,7 @@ class LoginPage extends StatelessWidget {
                   width: 250,
                   onpressed: () async {
                     try {
+                      // ignore: unused_local_variable
                       UserCredential userCredential = await FirebaseAuth
                           .instance
                           .signInWithEmailAndPassword(
@@ -77,6 +80,8 @@ class LoginPage extends StatelessWidget {
                           );
                         },
                       );
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const HomeBackgroundDark()));
                     } on FirebaseAuthException catch (e) {
                       if (e.code == 'user-not-found') {
                         showDialog(
@@ -114,7 +119,8 @@ class LoginPage extends StatelessWidget {
                           context: context,
                           builder: (context) {
                             return const AlertDialog(
-                              title: Text('Please enter the password and email!'),
+                              title:
+                                  Text('Please enter the password and email!'),
                             );
                           },
                         );
@@ -127,7 +133,7 @@ class LoginPage extends StatelessWidget {
                             );
                           },
                         );
-                      } 
+                      }
                     }
                   },
                   height: 60,

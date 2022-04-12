@@ -10,7 +10,7 @@ class Navigation extends StatelessWidget {
       extendBody: true,
       bottomNavigationBar: bottomNavigationBar,
       floatingActionButton:FloatingActionButton(
-        backgroundColor: Color(0000),
+        backgroundColor: const Color(0x00000000),
         onPressed: (){},
         tooltip: 'Increment',
         child: Image.asset("lib/imagesicon/add.png",scale: 5),

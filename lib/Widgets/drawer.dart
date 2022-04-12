@@ -16,7 +16,7 @@ static Drawer appdrawer = Drawer(
         
           DrawerHeader(child: Image.asset("lib/imagesicon/perfil.png")), //aonde vai ser colocado na imagem de perfil
           ListTile(
-            leading: Icon(Icons.person,
+            leading: const Icon(Icons.person,
             color: Colors.white),
             title: Text('PERFIL', style: GoogleFonts.lato(
             fontSize: 20,
@@ -26,7 +26,7 @@ static Drawer appdrawer = Drawer(
               onTap: () {},
           ),
           ListTile(
-            leading: Icon(Icons.sunny,
+            leading: const Icon(Icons.sunny,
             color: Colors.white),
             title: Text('LIGHT MODE', style: GoogleFonts.lato(
             fontSize: 20,

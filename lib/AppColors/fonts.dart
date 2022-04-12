@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class textapp extends StatelessWidget {
-   textapp({ Key? key,
+class TextApp extends StatelessWidget {
+   const TextApp({ Key? key,
   this.text,
   this.color,
   this.fontSize,
