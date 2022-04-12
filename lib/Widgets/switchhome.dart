@@ -37,6 +37,9 @@ class SwitchHome extends StatelessWidget {
                 child: const Text('HOME', textAlign: TextAlign.center),
               ),
             ),
+            const SizedBox(
+              width: 16,
+            ),
             Expanded(
               child: ElevatedButton(
                 onPressed: () {

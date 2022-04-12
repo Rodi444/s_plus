@@ -23,7 +23,8 @@ class AddForum extends StatelessWidget {
     final forumQuerySnapshot =
         collection.get().then((QuerySnapshot querySnapshot) {
       querySnapshot.docs.forEach((doc) {
-        var forumData = Forum(name: doc["ForumName"], description: doc['ForumDescription']);
+        var forumData =
+            Forum(name: doc["ForumName"], description: doc['ForumDescription']);
         forumList.add(forumData);
       });
     });
@@ -77,13 +78,14 @@ class AddForum extends StatelessWidget {
                     buttonText: 'CONFIRM',
                     width: 250,
                     onpressed: () async {
-                      if (currentUser!.uid != null ||
+                      if (currentUser?.uid != null ||
                           forumName != '' ||
                           forumDescription != '') {
-                        collection.doc(currentUser.uid).set(
+                        collection.doc().set(
                           {
                             'ForumName': forumName,
                             'ForumDescription': forumDescription,
+                            'owner_id': currentUser?.uid
                           },
                         ).then(
                           (value) => Navigator.of(context)

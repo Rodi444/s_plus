@@ -121,6 +121,7 @@ class RegisterQuestionPage extends StatelessWidget {
                       collection.doc(currentUser.uid).set(
                         {
                           'name': name,
+                          'id': currentUser.uid,
                           'course': course,
                           'university': university,
                           'city': city,
