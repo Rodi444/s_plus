@@ -12,7 +12,7 @@ class kGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       shrinkWrap: true,
       itemCount: forumList.length,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

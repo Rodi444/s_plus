@@ -6,6 +6,7 @@ import 'package:s_plus/pages/addforum.dart';
 import 'package:s_plus/Widgets/bottom_navigation.dart';
 import 'package:s_plus/Widgets/drawer.dart';
 import 'package:s_plus/Widgets/switchhome.dart';
+import 'package:s_plus/pages/forum_page.dart';
 import '../Firestore/forums.dart';
 
 class HomeBackgroundDark extends StatelessWidget {
@@ -28,6 +29,9 @@ class HomeBackgroundDark extends StatelessWidget {
       decoration: LightBoxDecoration.darkBoxDecoration,
       child: Scaffold(
         drawer: AppDrawer.appdrawer,
+
+        //APP BAR
+
         appBar: AppBar(
           title: Image.asset(
             'Images/LogoS+.png',
@@ -48,26 +52,43 @@ class HomeBackgroundDark extends StatelessWidget {
           elevation: 0,
         ),
         backgroundColor: Colors.transparent,
-        body: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const SwitchHome(),
-            FutureBuilder<List<Forum>>(
-                future: fetchForum(),
-                builder: ((context, snapshot) {
-                  switch (snapshot.connectionState) {
-                    case ConnectionState.done:
-                      return kGridView(forumList: snapshot.data!);
-                    case ConnectionState.waiting:
-                      return const CircularProgressIndicator();
-                    case ConnectionState.none:
-                      return Container();
-                    default:
-                      return const CircularProgressIndicator();
-                  }
-                })),
-          ],
+
+        //BODY
+
+        body: SingleChildScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const SwitchHome(),
+              FutureBuilder<List<Forum>>(
+                  future: fetchForum(),
+                  builder: ((context, snapshot) {
+                    switch (snapshot.connectionState) {
+                      case ConnectionState.done:
+                        return kGridView(
+                          forumList: snapshot.data!,
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const ForumPage()));
+                          },
+                        );
+                      case ConnectionState.waiting:
+                        return const CircularProgressIndicator();
+                      case ConnectionState.none:
+                        return Container();
+                      default:
+                        return const CircularProgressIndicator();
+                    }
+                  })),
+            ],
+          ),
         ),
+
+
+        //BOTTON NAVEGATION BAR
+
+
         bottomNavigationBar: const kNavigationBar(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
