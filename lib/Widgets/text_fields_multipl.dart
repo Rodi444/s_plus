@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class TextFieldBox extends StatelessWidget {
   final double vertical;
@@ -16,7 +15,7 @@ class TextFieldBox extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children:<Widget>[
          Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+          padding:  const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
           child: TextField(
             textAlignVertical: TextAlignVertical.top,       
             minLines: 1,

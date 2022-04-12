@@ -9,7 +9,7 @@ class ButtonApp extends StatelessWidget {
   final double height;
   final double fontSize;
 
-  ButtonApp({
+  const ButtonApp({
     required this.buttonText,
     required this.width,
     required this.height,
