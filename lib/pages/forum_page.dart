@@ -11,7 +11,7 @@ class ForumPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Container(
-      decoration: LightBoxDecoration.darkBoxDecoration,
+      decoration: LightBoxDecoration.background,
       child: Scaffold(
         drawer: AppDrawer.appdrawer,
 
@@ -50,7 +50,7 @@ class ForumPage extends StatelessWidget {
 
         //BOTTON NAVEGATION BAR
 
-        bottomNavigationBar: const kNavigationBar(),
+        bottomNavigationBar: const KNavigationBar(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             Navigator.push(

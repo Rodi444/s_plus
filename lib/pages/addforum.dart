@@ -130,7 +130,7 @@ class _AddForumState extends State<AddForum> {
           ],
         ),
         backgroundColor: const Color.fromARGB(0, 86, 92, 208),
-        bottomNavigationBar: const kNavigationBar(),
+        bottomNavigationBar: const KNavigationBar(),
       ),
     );
   }

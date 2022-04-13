@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:s_plus/AppColors/color.dart';
 import 'package:s_plus/Home/home_background_decoration.dart';
-import 'package:s_plus/Widgets/gridview.dart';
+import 'package:s_plus/Widgets/grid_view.dart';
 import 'package:s_plus/pages/addforum.dart';
 import 'package:s_plus/Widgets/bottom_navigation.dart';
 import 'package:s_plus/Widgets/drawer.dart';
@@ -38,75 +38,87 @@ class _HomeBackgroundDarkState extends State<HomeBackgroundDark> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: LightBoxDecoration.background,
-      child: Scaffold(
-        drawer: AppDrawer.appdrawer,
-        appBar: AppBar(
-          title: Image.asset(
-            'Images/Logo_Grande.png',
-            height: 55,
-            alignment: Alignment.center,
+      // decoration: const BoxDecoration(
+      //   image: DecorationImage(
+      //     image: AssetImage("Images/background.png"),
+      //     fit: BoxFit.cover,
+      //   ),
+      // ),
+      child: Container(
+        decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("Images/background.png"),
+          fit: BoxFit.cover)
           ),
-          actions: [
-            IconButton(
-                onPressed: () {
-                  setState(() {
-                    currentTheme.switchTheme();
-                    iconBool = !iconBool;
-                  });
-                },
-                icon: Icon(iconBool ? _iconDark : _iconLight)),
-          ],
-          backgroundColor: Colors.transparent,
-          centerTitle: true,
-          elevation: 0,
-          iconTheme: IconThemeData(color: Color.fromARGB(255, 250, 175, 184)),
-        ),
-        backgroundColor: Colors.transparent,
-        bottomNavigationBar: const KNavigationBar(),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const AddForum()),
-            );
-          },
-          backgroundColor: const Color.fromARGB(255, 86, 92, 208),
-          child: const Icon(
-            Icons.add,
-            size: 40,
-            color: Color.fromARGB(255, 250, 175, 184),
-          ),
-        ),
-        body: SingleChildScrollView(
-          physics: const AlwaysScrollableScrollPhysics(),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const SwitchHome(),
-              FutureBuilder<List<Forum>>(
-                future: fetchForum(),
-                builder: ((context, snapshot) {
-                  switch (snapshot.connectionState) {
-                    case ConnectionState.done:
-                      return kGridView(
-                        forumList: snapshot.data!,
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => const ForumPage()));
-                        },
-                      );
-                    case ConnectionState.waiting:
-                      return const CircularProgressIndicator();
-                    case ConnectionState.none:
-                      return Container();
-                    default:
-                      return const CircularProgressIndicator();
-                  }
-                }),
-              ),
+        child: Scaffold(
+          drawer: AppDrawer.appdrawer,
+          appBar: AppBar(
+            title: Image.asset(
+              'Images/Logo_Grande.png',
+              height: 55,
+              alignment: Alignment.center,
+            ),
+            actions: [
+              IconButton(
+                  onPressed: () {
+                    setState(() {
+                      currentTheme.switchTheme();
+                      iconBool = !iconBool;
+                    });
+                  },
+                  icon: Icon(iconBool ? _iconDark : _iconLight)),
             ],
+            backgroundColor: Colors.transparent,
+            centerTitle: true,
+            elevation: 0,
+            iconTheme: IconThemeData(color: Color.fromARGB(255, 250, 175, 184)),
           ),
+          bottomNavigationBar: const KNavigationBar(),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const AddForum()),
+              );
+            },
+            backgroundColor: const Color.fromARGB(255, 86, 92, 208),
+            child: const Icon(
+              Icons.add,
+              size: 40,
+              color: Color.fromARGB(255, 250, 175, 184),
+            ),
+          ),
+          body: SingleChildScrollView(
+            physics: const AlwaysScrollableScrollPhysics(),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const SwitchHome(),
+                FutureBuilder<List<Forum>>(
+                  future: fetchForum(),
+                  builder: ((context, snapshot) {
+                    switch (snapshot.connectionState) {
+                      case ConnectionState.done:
+                        return kGridView(
+                          forumList: snapshot.data!,
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => const ForumPage()));
+                          },
+                        );
+                      case ConnectionState.waiting:
+                        return const CircularProgressIndicator();
+                      case ConnectionState.none:
+                        return Container();
+                      default:
+                        return const CircularProgressIndicator();
+                    }
+                  }),
+                ),
+              ],
+            ),
+          ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         ),
       ),
     );

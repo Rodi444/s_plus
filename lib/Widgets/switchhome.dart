@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:s_plus/Home/home_page_light.dart';
-import 'package:s_plus/Widgets/gridview.dart';
 import 'package:s_plus/pages/subscribeds_light.dart';
 
 class SwitchHome extends StatelessWidget {
