@@ -5,13 +5,21 @@ import 'package:s_plus/Firestore/forums.dart';
 import 'package:s_plus/Home/home_background_decoration.dart';
 import 'package:s_plus/Home/home_page_light.dart';
 import 'package:s_plus/Widgets/bottom_navigation.dart';
+import 'package:s_plus/Widgets/text_fields_multipl.dart';
 import 'package:s_plus/Widgets/main_button.dart';
 import 'package:s_plus/Widgets/text_field.dart';
 import 'package:s_plus/Widgets/title_text.dart';
+import 'package:s_plus/theme_app/config.dart';
 
-class AddForum extends StatelessWidget {
-  const AddForum({Key? key}) : super(key: key);
 
+class AddForum extends StatefulWidget {
+  const AddForum({ Key? key }) : super(key: key);
+
+  @override
+  State<AddForum> createState() => _AddForumState();
+}
+
+class _AddForumState extends State<AddForum> {
   @override
   Widget build(BuildContext context) {
     String forumName = '';
@@ -30,7 +38,7 @@ class AddForum extends StatelessWidget {
     });
     return Container(
       alignment: Alignment.center,
-      decoration: LightBoxDecoration.darkBoxDecoration,
+      decoration: LightBoxDecoration.background,
       child: Scaffold(
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
