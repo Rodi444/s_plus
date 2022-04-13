@@ -6,7 +6,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:s_plus/Login-Register/first_page.dart';
 import 'package:s_plus/theme_app/config.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
-
 import 'package:s_plus/pages/forum_page.dart';
 import 'package:s_plus/Widgets/switchhome.dart';
 

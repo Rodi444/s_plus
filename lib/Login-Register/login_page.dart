@@ -41,7 +41,7 @@ class LoginPage extends StatelessWidget {
                   fontSize: 16,
                   maxLines: 1,
                   isPassword: false,
-                  hint: 'EMAIL',
+                  hint: 'HELLO',
                   onChanged: (text) {
                     email = text;
                   }),
