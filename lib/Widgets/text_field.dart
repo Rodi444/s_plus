@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class GlobalTextField extends StatefulWidget {
   final double height;
@@ -34,6 +33,7 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: widget.width,
+      height: widget.height,
       child: TextField(
         onChanged: widget.onChanged,
         keyboardType: widget.keyType,
@@ -41,7 +41,7 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
         style: TextStyle(
           fontFamily: 'lato',
           fontSize: widget.fontSize,
-          color: Color.fromARGB(255, 0, 0, 0),
+          color: const Color.fromARGB(255, 0, 0, 0),
         ),
         maxLines: widget.maxLines,
         obscureText: widget.isPassword,
@@ -50,7 +50,7 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
           hintText: widget.hint,
           fillColor: Colors.white,
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(50),
+            borderRadius: BorderRadius.circular(30),
           ),
           errorBorder: const OutlineInputBorder(
             borderSide: BorderSide(color: Colors.red),

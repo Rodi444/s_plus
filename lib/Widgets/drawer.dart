@@ -1,9 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:s_plus/AppColors/color.dart';
 import 'package:s_plus/AppColors/theme.dart';
-
 
 class AppDrawer {
 
