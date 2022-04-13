@@ -14,12 +14,8 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   var collection = FirebaseFirestore.instance.collection("users");
-  collection.doc().set(
-    {
-      
-    }
-  );
-  runApp( const MyApp());
+  collection.doc().set({});
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -29,34 +25,32 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
-
 class _MyAppState extends State<MyApp> {
-
-@override
-void initState(){
-super.initState();
-currentTheme.addListener(()
-{
-  setState(() {});
-});
-
-}
+  @override
+  void initState() {
+    super.initState();
+    currentTheme.addListener(() {
+      setState(() {});
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        inputDecorationTheme: InputDecorationTheme(iconColor: Colors.black),
+                scaffoldBackgroundColor: Colors.transparent,
+        inputDecorationTheme:
+            const InputDecorationTheme(iconColor: Colors.black),
         brightness: Brightness.light,
-        ),
+      ),
       darkTheme: ThemeData(
+        scaffoldBackgroundColor: Colors.transparent,
         brightness: Brightness.dark,
       ),
       themeMode: currentTheme.currentTheme(),
       home: const Scaffold(
-        body: FirstPage(),
+        body: HomeBackgroundDark(),
       ),
     );
   }

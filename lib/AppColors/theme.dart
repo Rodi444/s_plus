@@ -16,11 +16,10 @@ class LoginBackground {
       end: Alignment.center,
       stops: [0.0, 1.0],
       colors: [
-        Color.fromARGB(255, 86, 92, 208),
-        Color.fromARGB(255, 118, 100, 196),
+        Color.fromARGB(255, 108, 113, 215),
+        Color.fromARGB(255, 250, 175, 184),
       ],
     ),
-    color: const Color.fromARGB(255, 86, 92, 208),
     borderRadius: BorderRadius.circular(10),
   );
 }
