@@ -5,19 +5,22 @@ import 'package:s_plus/Widgets/drawer.dart';
 import 'package:s_plus/pages/addcomment.dart';
 import 'package:s_plus/pages/forum_body.dart';
 
+import '../Firestore/forums.dart';
+
 class ForumPage extends StatelessWidget {
-  const ForumPage({ Key? key}) : super(key: key);
+  final Forum forum;
+  const ForumPage({Key? key, required this.forum}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return Container(
       decoration: LightBoxDecoration.background,
       child: Scaffold(
         drawer: AppDrawer.appdrawer,
 
         //APP BAR
 
-        appBar:  AppBar(
+        appBar: AppBar(
           title: Image.asset(
             'Images/LogoS+.png',
             height: 55,
@@ -43,8 +46,8 @@ class ForumPage extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
-             ForumBody(),
+          children: [
+            ForumBody(name: forum.name, description: forum.description,),
           ],
         ),
 
@@ -66,6 +69,6 @@ class ForumPage extends StatelessWidget {
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
-      );
+    );
   }
 }

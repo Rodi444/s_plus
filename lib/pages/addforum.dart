@@ -93,7 +93,8 @@ class _AddForumState extends State<AddForum> {
                           {
                             'ForumName': forumName,
                             'ForumDescription': forumDescription,
-                            'owner_id': currentUser?.uid
+                            'owner_id': currentUser?.uid,
+                            'ForumID': currentTheme
                           },
                         ).then(
                           (value) => Navigator.of(context)

@@ -4,7 +4,9 @@ import 'package:s_plus/Firestore/forums.dart';
 import 'package:s_plus/Home/home_background_decoration.dart';
 
 class ForumBody extends StatelessWidget {
-  const ForumBody({Key? key}) : super(key: key);
+  final String name;
+  final String description;
+  const ForumBody({Key? key, required this.name, required this.description}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,28 +22,31 @@ class ForumBody extends StatelessWidget {
         child: Column(
           children: [
             Column(
-              children: const [
+              children:  [
                 Padding(
-                  padding: EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(16),
                   child: Text(
                     //Adicinar nome dos Forums
-                    'Nome do Forum',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    name,
+                    style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   ),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.all(8),
                   child: Text(
                     'Forum Description:',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold,),
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(8),
                   child: Text(
                     //Inserir descricao do Forum
-                    'iansdibivasd oudbubwoi quewfbias ubwdqfind bionc oweufbsi ewfiunsaoi iosdunfiqew ioubsdianiweo fwie fioefn  ouefbi fiounfweq oiwuefn feoiefb oiewb',
-                    style: TextStyle(fontSize: 16),
+                    description,
+                    style: const TextStyle(fontSize: 16),
                     textAlign: TextAlign.center,
                   ),
                 ),

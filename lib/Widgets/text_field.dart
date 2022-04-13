@@ -5,7 +5,7 @@ class GlobalTextField extends StatefulWidget {
   final double width;
   final TextInputType keyType;
   final double fontSize;
-  final int maxLines;
+  final int maxLines; 
   final bool isPassword;
   final String hint;
   final Function(String)? onChanged;
