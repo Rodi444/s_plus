@@ -38,7 +38,11 @@ class _AddForumState extends State<AddForum> {
     });
     return Container(
       alignment: Alignment.center,
-      decoration: LightBoxDecoration.background,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(iconBool ? "Images/background_light.png" : "Images/background_dark.png"),
+        fit: BoxFit.cover)
+      ),
       child: Scaffold(
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -130,7 +134,6 @@ class _AddForumState extends State<AddForum> {
             )
           ],
         ),
-        backgroundColor: const Color.fromARGB(0, 86, 92, 208),
         bottomNavigationBar: const KNavigationBar(),
       ),
     );
