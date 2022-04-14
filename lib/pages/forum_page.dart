@@ -13,6 +13,7 @@ class ForumPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String teste = forum.id;
     return Container(
       decoration: LightBoxDecoration.background,
       child: Scaffold(
@@ -58,7 +59,8 @@ class ForumPage extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => AddComment(id: forum.id,)),
+              MaterialPageRoute(builder: (context) => AddComment(id: teste)),
+
             );
           },
           backgroundColor: const Color.fromARGB(255, 86, 92, 208),
