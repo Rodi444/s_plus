@@ -16,6 +16,7 @@ class AddComment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Forum forum;
+    String userName;
     List<Comments> forumComments = [];
     String forumComment = '';
     var bottom = MediaQuery.of(context).viewInsets.bottom;
@@ -28,21 +29,32 @@ class AddComment extends StatelessWidget {
       (QuerySnapshot querySnapshot) {
         querySnapshot.docs.forEach(
           (doc) {
-            var forumData =
-                Comments(comment: doc["ForumComment"], user: doc['User']);
+            var forumData = Comments(
+                comment: doc["ForumComment"],
+                user: doc['User'],
+                userName: doc['usernanem']);
             forumComments.add(forumData);
           },
         );
       },
     );
 
+    Future<String> fetchUserData() async {
+      final user = await FirebaseFirestore.instance
+          .collection("users")
+          .doc(currentUser!.uid)
+          .get();
+      return user["name"];
+    }
+
     return Container(
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(iconBool ? "Images/background_light.png" : "Images/background_dark.png"),
-        fit: BoxFit.cover)
-      ),
+          image: DecorationImage(
+              image: AssetImage(iconBool
+                  ? "Images/background_light.png"
+                  : "Images/background_dark.png"),
+              fit: BoxFit.cover)),
       child: Scaffold(
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -75,11 +87,13 @@ class AddComment extends StatelessWidget {
                     buttonText: 'CONFIRM',
                     width: 250,
                     onpressed: () async {
-                      if (currentUser?.uid != null || forumComment != '') {
+                      final userName = await fetchUserData();
+                      if (forumComment != '') {
                         await collection.doc().set(
                           {
                             'ForumComment': forumComment,
-                            'User': currentUser?.uid
+                            'User': currentUser!.uid,
+                            'username': userName
                           },
                         );
                         Navigator.pop(context);
