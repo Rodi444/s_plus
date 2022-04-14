@@ -3,6 +3,7 @@ import 'package:s_plus/Home/home_background_decoration.dart';
 import 'package:s_plus/Home/home_page_light.dart';
 import 'package:s_plus/Widgets/bottom_navigation.dart';
 import 'package:s_plus/Widgets/drawer.dart';
+import 'package:s_plus/Widgets/forum_comments.dart';
 import 'package:s_plus/pages/addcomment.dart';
 import 'package:s_plus/pages/forum_body.dart';
 import 'package:s_plus/theme_app/config.dart';
@@ -65,12 +66,15 @@ class _ForumPageState extends State<ForumPage> {
 
         //BODY
 
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            ForumBody(name: widget.forum.name, description: widget.forum.description, id: widget.forum.id,),
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              ForumBody(name: widget.forum.name, description: widget.forum.description, id: widget.forum.id,),
+              ForumComments(id: widget.forum.id),
+            ],
+          ),
         ),
 
         //BOTTON NAVEGATION BAR
