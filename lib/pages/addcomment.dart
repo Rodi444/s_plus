@@ -1,10 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:s_plus/Firestore/comments.dart';
 import 'package:s_plus/Firestore/forums.dart';
-import 'package:s_plus/Home/home_background_decoration.dart';
 import 'package:s_plus/Widgets/title_text.dart';
 import '../Home/home_page_light.dart';
 import '../Widgets/bottom_navigation.dart';
@@ -40,7 +38,11 @@ class AddComment extends StatelessWidget {
 
     return Container(
       alignment: Alignment.center,
-      decoration: LightBoxDecoration.background,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(iconBool ? "Images/background_light.png" : "Images/background_dark.png"),
+        fit: BoxFit.cover)
+      ),
       child: Scaffold(
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
