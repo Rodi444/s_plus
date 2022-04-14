@@ -14,8 +14,8 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var bottom = MediaQuery.of(context).viewInsets.bottom;
-    String password = '123123';
-    String email = 'email@email.com';
+    String password = '';
+    String email = '';
     bool isValid = EmailValidator.validate(email);
 
     return Container(
