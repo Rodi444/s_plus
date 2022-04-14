@@ -37,7 +37,8 @@ class kGridView extends StatelessWidget {
               alignment: Alignment.center,
               child: Text(
                 forumList[index].name.toUpperCase(),
-                style: const TextStyle(fontSize: 16),
+                textAlign: TextAlign.center,
+                style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold,),
               ),
             ),
             decoration: AppColor.gradient,

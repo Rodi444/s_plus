@@ -24,7 +24,7 @@ class FirstPage extends StatelessWidget {
             children: [
               Image.asset(
                 'Images/Logo_Grande.png',
-                height: (MediaQuery.of(context).size.height - bottom) * 0.3,
+                height: (MediaQuery.of(context).size.height - bottom) * 0.26,
                 width: MediaQuery.of(context).size.width * 0.7,
               ),
               SizedBox(

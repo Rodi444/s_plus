@@ -52,7 +52,7 @@ class _MyAppState extends State<MyApp> {
       ),
       themeMode: currentTheme.currentTheme(),
       home: const Scaffold(
-        body: LoginPage(),
+        body: FirstPage(),
       ),
     );
   }

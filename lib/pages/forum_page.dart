@@ -88,7 +88,7 @@ class _ForumPageState extends State<ForumPage> {
               MaterialPageRoute(builder: (context) => AddComment(id: teste)),
 
 
-            );
+            ).then((value) => setState(() {}));
           },
           backgroundColor: const Color.fromARGB(255, 250, 175, 184),
           child: const Icon(

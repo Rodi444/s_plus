@@ -14,7 +14,7 @@ class RegisterPage extends StatelessWidget {
     var bottom = MediaQuery.of(context).viewInsets.bottom;
     String password = '';
     String email = '';
-    String confirmPassword = '123123';
+    String confirmPassword = '';
 
     return Container(
       decoration: CustomBoxDecoration.boxDecoration,
