@@ -23,6 +23,7 @@ IconData _iconDark = Icons.nights_stay;
 class _ForumPageState extends State<ForumPage> {
   @override
   Widget build(BuildContext context) {
+    String teste = forum.id;
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -79,7 +80,10 @@ class _ForumPageState extends State<ForumPage> {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => AddComment(id: widget.forum.id,)),
+
+              MaterialPageRoute(builder: (context) => AddComment(id: teste)),
+
+
             );
           },
           backgroundColor: const Color.fromARGB(255, 250, 175, 184),

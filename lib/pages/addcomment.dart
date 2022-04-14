@@ -22,7 +22,7 @@ class AddComment extends StatelessWidget {
     var currentUser = FirebaseAuth.instance.currentUser;
     var collection = FirebaseFirestore.instance
         .collection("Forums")
-        .doc()
+        .doc(id)
         .collection("ForumComment");
     final forumQuerySnapshot = collection.get().then(
       (QuerySnapshot querySnapshot) {
@@ -76,36 +76,13 @@ class AddComment extends StatelessWidget {
                     width: 250,
                     onpressed: () async {
                       if (currentUser?.uid != null || forumComment != '') {
-                        collection.doc(id).set(
+                        await collection.doc().set(
                           {
                             'ForumComment': forumComment,
                             'User': currentUser?.uid
                           },
-                        ).then(
-                          (value) => Navigator.of(context)
-                              .push(MaterialPageRoute(
-                                  builder: (context) =>
-                                      const HomeBackgroundDark()))
-                              .catchError(
-                            (error) {
-                              showDialog(
-                                context: context,
-                                builder: (context) {
-                                  return AlertDialog(
-                                    title: const Text('Comment Successfull'),
-                                    actions: [
-                                      TextButton(
-                                        onPressed: () =>
-                                            Navigator.pop(context, 'ok'),
-                                        child: const Text('ok'),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              );
-                            },
-                          ),
                         );
+                        Navigator.pop(context);
                       }
                     },
                     height: 60,

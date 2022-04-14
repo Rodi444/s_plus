@@ -12,11 +12,9 @@ class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var bottom = MediaQuery.of(context).viewInsets.bottom;
-    //TODO REMOVE HARDCODED DATA
-    String password = '123123';
-    String email = 'email@email.com';
+    String password = '';
+    String email = '';
     String confirmPassword = '123123';
-    bool isValid = EmailValidator.validate(email);
 
     return Container(
       decoration: CustomBoxDecoration.boxDecoration,
@@ -82,7 +80,7 @@ class RegisterPage extends StatelessWidget {
                   buttonText: 'CONFIRM',
                   width: 250,
                   onpressed: () async {
-                    if (password == confirmPassword && isValid) {
+                    if (password == confirmPassword && EmailValidator.validate(email)) {
                       try {
                         UserCredential userCredential = await FirebaseAuth
                             .instance
@@ -151,7 +149,7 @@ class RegisterPage extends StatelessWidget {
                                   ],
                                 );
                               });
-                        } else if (!isValid) {
+                        } else if (!EmailValidator.validate(email)) {
                           showDialog(
                             context: context,
                             builder: (context) {
