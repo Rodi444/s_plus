@@ -4,6 +4,7 @@ import 'package:s_plus/Home/home_page_light.dart';
 //import 'package:s_plus/Login-Register/first_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:s_plus/Login-Register/first_page.dart';
+import 'package:s_plus/Login-Register/login_page.dart';
 import 'package:s_plus/theme_app/config.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:s_plus/pages/forum_page.dart';
@@ -38,18 +39,20 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+                hintColor: Colors.grey,
                 scaffoldBackgroundColor: Colors.transparent,
         inputDecorationTheme:
             const InputDecorationTheme(iconColor: Colors.black),
         brightness: Brightness.light,
       ),
       darkTheme: ThemeData(
+        hintColor: Colors.grey,
         scaffoldBackgroundColor: Colors.transparent,
         brightness: Brightness.dark,
       ),
       themeMode: currentTheme.currentTheme(),
       home: const Scaffold(
-        body: HomeBackgroundDark(),
+        body: LoginPage(),
       ),
     );
   }

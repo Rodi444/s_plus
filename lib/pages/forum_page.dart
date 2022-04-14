@@ -23,7 +23,7 @@ IconData _iconDark = Icons.nights_stay;
 class _ForumPageState extends State<ForumPage> {
   @override
   Widget build(BuildContext context) {
-    String teste = forum.id;
+    String teste = widget.forum.id;
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
