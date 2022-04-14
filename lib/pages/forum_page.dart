@@ -6,7 +6,7 @@ import 'package:s_plus/pages/addcomment.dart';
 import 'package:s_plus/pages/forum_body.dart';
 
 import '../Firestore/forums.dart';
-
+ 
 class ForumPage extends StatelessWidget {
   final Forum forum;
   const ForumPage({Key? key, required this.forum}) : super(key: key);
@@ -47,7 +47,7 @@ class ForumPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            ForumBody(name: forum.name, description: forum.description,),
+            ForumBody(name: forum.name, description: forum.description, id: forum.id,),
           ],
         ),
 
@@ -58,7 +58,7 @@ class ForumPage extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const AddComment()),
+              MaterialPageRoute(builder: (context) => AddComment(id: forum.id,)),
             );
           },
           backgroundColor: const Color.fromARGB(255, 86, 92, 208),

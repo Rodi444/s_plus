@@ -12,7 +12,8 @@ import '../Widgets/main_button.dart';
 import '../Widgets/text_field.dart';
 
 class AddComment extends StatelessWidget {
-  const AddComment({Key? key}) : super(key: key);
+  final String id;
+  const AddComment({Key? key, required this.id}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,14 +26,17 @@ class AddComment extends StatelessWidget {
         .collection("Forums")
         .doc()
         .collection("ForumComment");
-    final forumQuerySnapshot =
-        collection.get().then((QuerySnapshot querySnapshot) {
-      querySnapshot.docs.forEach((doc) {
-        var forumData =
-            Comments(comment: doc["ForumComment"], user: doc['User']);
-        forumComments.add(forumData);
-      });
-    });
+    final forumQuerySnapshot = collection.get().then(
+      (QuerySnapshot querySnapshot) {
+        querySnapshot.docs.forEach(
+          (doc) {
+            var forumData =
+                Comments(comment: doc["ForumComment"], user: doc['User']);
+            forumComments.add(forumData);
+          },
+        );
+      },
+    );
 
     return Container(
       alignment: Alignment.center,
@@ -70,7 +74,7 @@ class AddComment extends StatelessWidget {
                     width: 250,
                     onpressed: () async {
                       if (currentUser?.uid != null || forumComment != '') {
-                        collection.doc().set(
+                        collection.doc(id).set(
                           {
                             'ForumComment': forumComment,
                             'User': currentUser?.uid

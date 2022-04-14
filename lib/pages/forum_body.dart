@@ -6,7 +6,13 @@ import 'package:s_plus/Home/home_background_decoration.dart';
 class ForumBody extends StatelessWidget {
   final String name;
   final String description;
-  const ForumBody({Key? key, required this.name, required this.description}) : super(key: key);
+  final String id;
+  const ForumBody(
+      {Key? key,
+      required this.name,
+      required this.description,
+      required this.id})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,13 +28,14 @@ class ForumBody extends StatelessWidget {
         child: Column(
           children: [
             Column(
-              children:  [
+              children: [
                 Padding(
                   padding: const EdgeInsets.all(16),
                   child: Text(
                     //Adicinar nome dos Forums
                     name,
-                    style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 24, fontWeight: FontWeight.bold),
                   ),
                 ),
                 const Padding(

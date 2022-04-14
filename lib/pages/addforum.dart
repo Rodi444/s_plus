@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:s_plus/Firestore/forums.dart';
 import 'package:s_plus/Home/home_background_decoration.dart';
 import 'package:s_plus/Home/home_page_light.dart';
@@ -32,7 +33,7 @@ class _AddForumState extends State<AddForum> {
         collection.get().then((QuerySnapshot querySnapshot) {
       querySnapshot.docs.forEach((doc) {
         var forumData =
-            Forum(name: doc["ForumName"], description: doc['ForumDescription']);
+            Forum(name: doc["ForumName"], description: doc['ForumDescription'], id: doc['id']);
         forumList.add(forumData);
       });
     });
@@ -89,18 +90,22 @@ class _AddForumState extends State<AddForum> {
                       if (currentUser?.uid != null ||
                           forumName != '' ||
                           forumDescription != '') {
-                        collection.doc().set(
+                        var doc = collection.doc();
+                        doc.set(
                           {
                             'ForumName': forumName,
                             'ForumDescription': forumDescription,
                             'owner_id': currentUser?.uid,
-                            'ForumID': currentTheme
                           },
                         ).then(
-                          (value) => Navigator.of(context)
+                          (value) => doc.update(
+                           {
+                             'id': doc.id
+                           } 
+                          ).then((value) => Navigator.of(context)
                               .push(MaterialPageRoute(
                                   builder: (context) =>
-                                      const HomeBackgroundDark()))
+                                      const HomeBackgroundDark())))
                               .catchError(
                             (error) {
                               showDialog(
