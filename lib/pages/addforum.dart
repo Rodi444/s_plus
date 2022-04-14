@@ -1,16 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:s_plus/Firestore/forums.dart';
-import 'package:s_plus/Home/home_background_decoration.dart';
 import 'package:s_plus/Home/home_page_light.dart';
 import 'package:s_plus/Widgets/bottom_navigation.dart';
-import 'package:s_plus/Widgets/text_fields_multipl.dart';
 import 'package:s_plus/Widgets/main_button.dart';
 import 'package:s_plus/Widgets/text_field.dart';
 import 'package:s_plus/Widgets/title_text.dart';
-import 'package:s_plus/theme_app/config.dart';
 
 
 class AddForum extends StatefulWidget {

@@ -1,20 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:s_plus/Home/home_background_decoration.dart';
+import 'package:s_plus/Home/home_page_light.dart';
 import 'package:s_plus/Widgets/bottom_navigation.dart';
 import 'package:s_plus/Widgets/drawer.dart';
 import 'package:s_plus/pages/addcomment.dart';
 import 'package:s_plus/pages/forum_body.dart';
+import 'package:s_plus/theme_app/config.dart';
 
 import '../Firestore/forums.dart';
  
-class ForumPage extends StatelessWidget {
+class ForumPage extends StatefulWidget {
   final Forum forum;
   const ForumPage({Key? key, required this.forum}) : super(key: key);
 
   @override
+  State<ForumPage> createState() => _ForumPageState();
+  
+}
+IconData _iconLight = Icons.wb_sunny;
+IconData _iconDark = Icons.nights_stay;
+
+class _ForumPageState extends State<ForumPage> {
+  @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: LightBoxDecoration.background,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(iconBool ? "Images/background_light.png" : "Images/background_dark.png"),
+        fit: BoxFit.cover)
+      ),
       child: Scaffold(
         drawer: AppDrawer.appdrawer,
 
@@ -22,22 +36,29 @@ class ForumPage extends StatelessWidget {
 
         appBar: AppBar(
           title: Image.asset(
-            'Images/LogoS+.png',
+            (iconBool? 'Images/Logo_Grande_preta.png' : 'Images/Logo_Grande.png'),
             height: 55,
             alignment: Alignment.center,
           ),
           actions: [
+        //     AnimSearchBar(width: 50, textController: textController, onSuffixTap:  () { SEARCH
+        //   setState(() {
+        //     textController.clear();
+        //   });
+        // },),
             IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.search,
-                size: 36,
-              ),
-            ),
+                onPressed: () {
+                  setState(() {
+                    currentTheme.switchTheme();
+                    iconBool = !iconBool;
+                  });
+                },
+                icon: Icon(iconBool ? _iconDark : _iconLight)),
           ],
           backgroundColor: Colors.transparent,
           centerTitle: true,
           elevation: 0,
+          iconTheme: const IconThemeData(color: Color.fromARGB(255, 250, 175, 184)),
         ),
         backgroundColor: Colors.transparent,
 
@@ -47,7 +68,7 @@ class ForumPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            ForumBody(name: forum.name, description: forum.description, id: forum.id,),
+            ForumBody(name: widget.forum.name, description: widget.forum.description, id: widget.forum.id,),
           ],
         ),
 
@@ -58,10 +79,10 @@ class ForumPage extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => AddComment(id: forum.id,)),
+              MaterialPageRoute(builder: (context) => AddComment(id: widget.forum.id,)),
             );
           },
-          backgroundColor: const Color.fromARGB(255, 86, 92, 208),
+          backgroundColor: const Color.fromARGB(255, 250, 175, 184),
           child: const Icon(
             Icons.add,
             size: 40,
