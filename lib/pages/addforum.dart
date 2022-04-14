@@ -47,7 +47,7 @@ class _AddForumState extends State<AddForum> {
             Column(
               children: [
                 const Padding(padding: EdgeInsets.all(30)),
-                const TitleText(tostring: "NEW FORUM", fontsize: 25),
+                const TitleText(tostring: "NEW FORUM", fontsize: 25,),
                 SizedBox(
                   height: (MediaQuery.of(context).size.height - bottom) * 0.02,
                 ),

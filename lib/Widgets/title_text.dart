@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:s_plus/Home/home_page_light.dart';
 
 
 class TitleText extends StatelessWidget {
@@ -16,7 +17,7 @@ class TitleText extends StatelessWidget {
     return Text(tostring,
     style: TextStyle(
       fontSize: fontsize,
-      color: Colors.white,
+      color: (iconBool ? Colors.black : Colors.white),
     )
     );
   }
