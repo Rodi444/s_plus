@@ -29,6 +29,11 @@ class RegisterQuestionPage extends StatelessWidget {
     return Container(
       decoration: CustomBoxDecoration.boxDecoration,
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          actions: const [],
+        ),
         backgroundColor: Colors.transparent,
         body: Center(
           child: Column(

@@ -45,20 +45,8 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
           color: const Color.fromARGB(255, 0, 0, 0),
         ),
         maxLines: widget.maxLines,
-        obscureText: obscure,
+        obscureText: widget.isPassword,
         decoration: InputDecoration(
-          suffixIcon: IconButton(
-            onPressed: 
-          (){
-            setState(() {
-                obscure = !obscure;
-            });
-          }, icon: Icon(
-            obscure
-            ? Icons.visibility_outlined 
-            : Icons.visibility_off_outlined,
-            color: Colors.grey)
-            ),
           filled: true,
           hintText: widget.hint,
           fillColor: Colors.white,

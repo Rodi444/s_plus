@@ -7,6 +7,7 @@ import 'package:s_plus/Widgets/main_button.dart';
 import 'package:s_plus/Widgets/text_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:email_validator/email_validator.dart';
+import 'package:s_plus/Widgets/text_field_passoword.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -21,6 +22,11 @@ class LoginPage extends StatelessWidget {
     return Container(
       decoration: CustomBoxDecoration.boxDecoration,
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          actions: const [],
+        ),
         backgroundColor: Colors.transparent,
         body: Center(
           child: Column(
@@ -48,13 +54,13 @@ class LoginPage extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              GlobalTextField(
+              GlobalTextFieldPassword(
                   height: 50,
                   width: 280,
                   keyType: TextInputType.text,
                   fontSize: 16,
                   maxLines: 1,
-                  isPassword: true,
+                  
                   hint: 'PASSWORD',
                   onChanged: (text) {
                     password = text;

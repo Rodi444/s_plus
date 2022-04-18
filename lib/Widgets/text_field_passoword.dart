@@ -21,11 +21,11 @@ class GlobalTextFieldPassword extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<GlobalTextFieldPassord> createState() => _GlobalTextFieldStatePassord();
+  State<GlobalTextFieldPassword> createState() => _GlobalTextFieldPasswordState();
 }
 
-class _GlobalTextFieldPassordState extends State<GlobalTextFieldPassord> {
-  _GlobalTextFieldPassordState();
+class _GlobalTextFieldPasswordState extends State<GlobalTextFieldPassword> {
+  _GlobalTextFieldPasswordState();
   bool obscure = false;
 
   @override
@@ -53,8 +53,8 @@ class _GlobalTextFieldPassordState extends State<GlobalTextFieldPassord> {
             });
           }, icon: Icon(
             obscure
-            ? Icons.visibility_outlined 
-            : Icons.visibility_off_outlined,
+            ? Icons.visibility_off_outlined
+            : Icons.visibility_outlined,
             color: Colors.grey)
             ),
           filled: true,
