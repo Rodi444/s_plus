@@ -144,15 +144,25 @@ class RegisterPage extends StatelessWidget {
                                   ],
                                 );
                               });
-                        } else if (!EmailValidator.validate(email)) {
-                          showDialog(
-                            context: context,
-                            builder: (context) {
-                              return const AlertDialog(
-                                title: Text('Email not Valid!!'),
-                              );
-                            },
-                          );
+                        // } else if (!EmailValidator.validate(email)) {
+                        //   showDialog(
+                        //     context: context,
+                        //     builder: (context) {
+                        //       return const AlertDialog(
+                        //         title: Text('Email not Valid!!'),
+                        //       );
+                        //     },
+                        //   );
+                        // } else if (password == '' || confirmPassword == ''|| email == '') {
+                          // showDialog(
+                          //   context: context,
+                          //   builder: (context) {
+                          //     return const AlertDialog(
+                          //       title: Text('Please enter the e-mail and password!'),
+                          //     );
+                          //   },
+                          // );
+                        } else {
                         }
                       } catch (e) {
                         print(e);

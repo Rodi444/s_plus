@@ -41,11 +41,11 @@ class RegisterQuestionPage extends StatelessWidget {
             children: [
               Image.asset(
                 'Images/Logo_Grande.png',
-                height: (MediaQuery.of(context).size.height - bottom) * 0.15,
-                width: MediaQuery.of(context).size.width * 0.3,
+                height: (MediaQuery.of(context).size.height - bottom) * 0.13,
+                width: MediaQuery.of(context).size.width * 0.26,
               ),
               SizedBox(
-                height: (MediaQuery.of(context).size.height - bottom) * 0.04,
+                height: (MediaQuery.of(context).size.height - bottom) * 0.02,
               ),
               GlobalTextField(
                 height: 50,
@@ -60,7 +60,7 @@ class RegisterQuestionPage extends StatelessWidget {
                 },
               ),
               const SizedBox(
-                height: 10,
+                height: 8,
               ),
               GlobalTextField(
                   height: 50,
@@ -74,7 +74,7 @@ class RegisterQuestionPage extends StatelessWidget {
                     course = text;
                   }),
               const SizedBox(
-                height: 10,
+                height: 8,
               ),
               GlobalTextField(
                   height: 50,
@@ -88,7 +88,7 @@ class RegisterQuestionPage extends StatelessWidget {
                     university = text;
                   }),
               const SizedBox(
-                height: 10,
+                height: 8,
               ),
               GlobalTextField(
                   height: 50,
@@ -102,7 +102,7 @@ class RegisterQuestionPage extends StatelessWidget {
                     city = text;
                   }),
               const SizedBox(
-                height: 10,
+                height: 8,
               ),
               GlobalTextField(
                   height: 50,
@@ -116,7 +116,7 @@ class RegisterQuestionPage extends StatelessWidget {
                     age = int.parse(text);
                   }),
               SizedBox(
-                height: (MediaQuery.of(context).size.height - bottom) * 0.04,
+                height: (MediaQuery.of(context).size.height - bottom) * 0.02,
               ),
               MainButtonApp(
                   buttonText: 'CONFIRM',

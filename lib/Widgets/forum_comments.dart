@@ -26,7 +26,7 @@ class ForumComments extends StatelessWidget {
       var collection = FirebaseFirestore.instance
           .collection("Forums")
           .doc(id)
-          .collection("ForumComment").orderBy("time");
+          .collection("ForumComment").orderBy("time", descending: false);
       final commentsCollection = await collection.get();
       for (final document in commentsCollection.docs) {
         var comment = Comments.fromDocumentSnapshot(doc: document);

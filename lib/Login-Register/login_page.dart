@@ -54,13 +54,13 @@ class LoginPage extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              GlobalTextFieldPassword(
+              GlobalTextField(
                   height: 50,
                   width: 280,
                   keyType: TextInputType.text,
                   fontSize: 16,
                   maxLines: 1,
-                  
+                  isPassword: true,
                   hint: 'PASSWORD',
                   onChanged: (text) {
                     password = text;
