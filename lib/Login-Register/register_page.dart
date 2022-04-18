@@ -32,7 +32,7 @@ class RegisterPage extends StatelessWidget {
             children: [
               Image.asset(
                 'Images/Logo_Grande.png',
-                height: (MediaQuery.of(context).size.height - bottom) * 0.2,
+                height: (MediaQuery.of(context).size.height - bottom) * 0.17,
                 width: MediaQuery.of(context).size.width * 0.6,
               ),
               SizedBox(
@@ -53,13 +53,14 @@ class RegisterPage extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              GlobalTextFieldPassword(
+              GlobalTextField(
                 height: 50,
                 width: 280,
                 keyType: TextInputType.text,
                 fontSize: 16,
                 maxLines: 1,
                 hint: 'PASSWORD',
+                isPassword: true,
                 onChanged: (text) {
                   password = text;
                 },
@@ -67,13 +68,15 @@ class RegisterPage extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              GlobalTextFieldPassword(
+              GlobalTextField(
                   height: 50,
                   width: 280,
                   keyType: TextInputType.text,
                   fontSize: 16,
                   maxLines: 1,
+                  isPassword: true,
                   hint: 'CONFIRM PASSWORD',
+
                   onChanged: (text) {
                     confirmPassword = text;
                   }),
@@ -84,7 +87,7 @@ class RegisterPage extends StatelessWidget {
                   buttonText: 'CONFIRM',
                   width: 250,
                   onpressed: () async {
-                    if (password == confirmPassword && EmailValidator.validate(email)) {
+                    if (password == confirmPassword) {
                       try {
                         UserCredential userCredential = await FirebaseAuth
                             .instance
@@ -124,19 +127,7 @@ class RegisterPage extends StatelessWidget {
                             },
                           );
                         }
-                        if (password == '' ||
-                            email == '' ||
-                            confirmPassword == '') {
-                          showDialog(
-                            context: context,
-                            builder: (context) {
-                              return const AlertDialog(
-                                title: Text(
-                                    'Please enter the password and email!'),
-                              );
-                            },
-                          );
-                        } else if (e.code == 'email-already-in-use') {
+                        if (e.code == 'email-already-in-use') {
                           showDialog(
                               context: context,
                               builder: (context) {
