@@ -50,7 +50,7 @@ class _HomeBackgroundDarkState extends State<HomeBackgroundDark> {
         fit: BoxFit.cover)
       ),
       child: Scaffold(
-        drawer: AppDrawer.appdrawer,
+        drawer: const DrawerApp(),
         appBar: AppBar(
           title: Image.asset(
             (iconBool? 'Images/Logo_Grande_preta.png' : 'Images/Logo_Grande.png'),

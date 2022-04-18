@@ -1,16 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:s_plus/AppColors/theme.dart';
+import 'package:s_plus/pages/perfil.dart';
 
-class AppDrawer {
+class DrawerApp extends StatefulWidget {
+  const DrawerApp({ Key? key }) : super(key: key);
 
-static Drawer appdrawer = Drawer(
+  @override
+  State<DrawerApp> createState() => _DrawerAppState();
+}
+
+class _DrawerAppState extends State<DrawerApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
       child: Container(
         decoration: LoginBackground.gradient,
     child: ListView(
       padding: EdgeInsets.zero,
       children: <Widget>[
-          DrawerHeader(child: Image.asset("lib/imagesicon/perfil.png")), //aonde vai ser colocado na imagem de perfil
+          DrawerHeader(child: Image.asset("lib/imagesicon/perfil.png")),
           ListTile(
             leading: const Icon(Icons.person,
             color: Colors.white),
@@ -19,10 +28,12 @@ static Drawer appdrawer = Drawer(
                 fontStyle: FontStyle.normal,
                 color: Colors.white,
             ),),
-              onTap: () {},
+              onTap: () {Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const Perfil()));},
           ),
       ],
 )
 )
 );
+  }
 }

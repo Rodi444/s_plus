@@ -1,33 +1,31 @@
 import 'package:flutter/material.dart';
 
-class GlobalTextField extends StatefulWidget {
+class GlobalTextFieldPassword extends StatefulWidget {
   final double height;
   final double width;
   final TextInputType keyType;
   final double fontSize;
   final int maxLines; 
-  final bool isPassword;
   final String hint;
   final Function(String)? onChanged;
 
-  const GlobalTextField({
+  const GlobalTextFieldPassword({
     Key? key,
     required this.height,
     required this.width,
     required this.keyType,
     required this.fontSize,
     required this.maxLines,
-    required this.isPassword,
     required this.hint,
     this.onChanged,
   }) : super(key: key);
 
   @override
-  State<GlobalTextField> createState() => _GlobalTextFieldState();
+  State<GlobalTextFieldPassord> createState() => _GlobalTextFieldStatePassord();
 }
 
-class _GlobalTextFieldState extends State<GlobalTextField> {
-  _GlobalTextFieldState();
+class _GlobalTextFieldPassordState extends State<GlobalTextFieldPassord> {
+  _GlobalTextFieldPassordState();
   bool obscure = false;
 
   @override

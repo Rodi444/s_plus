@@ -20,8 +20,8 @@ class _SubscribedDarkState extends State<SubscribedDark> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: AppDrawer.appdrawer,
-      appBar: AppBar(
+        drawer: const DrawerApp(),      
+        appBar: AppBar(
         title: Image.asset(
           'Images/Logo_Grande.png',
           height: 55,

@@ -31,8 +31,7 @@ class _ForumPageState extends State<ForumPage> {
         fit: BoxFit.cover)
       ),
       child: Scaffold(
-        drawer: AppDrawer.appdrawer,
-
+        drawer: const DrawerApp(),
         //APP BAR
 
         appBar: AppBar(
