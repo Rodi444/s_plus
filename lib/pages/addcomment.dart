@@ -17,6 +17,7 @@ class AddComment extends StatelessWidget {
     String userName;
     List<Comments> forumComments = [];
     String forumComment = '';
+    var currentTime = Timestamp.now();
     var bottom = MediaQuery.of(context).viewInsets.bottom;
     var currentUser = FirebaseAuth.instance.currentUser;
     var collection = FirebaseFirestore.instance
@@ -30,6 +31,7 @@ class AddComment extends StatelessWidget {
             var forumData = Comments(
                 comment: doc["ForumComment"],
                 user: doc['User'],
+                time: doc["time"],
                 userName: doc['usernanem']);
             forumComments.add(forumData);
           },
@@ -91,6 +93,7 @@ class AddComment extends StatelessWidget {
                           {
                             'ForumComment': forumComment,
                             'User': currentUser!.uid,
+                            'time': currentTime,
                             'username': userName
                           },
                         );
