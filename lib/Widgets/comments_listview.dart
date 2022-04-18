@@ -1,10 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:s_plus/Firestore/comments.dart';
-import 'package:s_plus/Firestore/forums.dart';
 import '../AppColors/color.dart';
-import '../pages/forum_page.dart';
+
 
 class ListViewComments extends StatelessWidget {
   final List<Comments> commentsList;

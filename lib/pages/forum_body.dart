@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:s_plus/AppColors/color.dart';
-import 'package:s_plus/Firestore/forums.dart';
-import 'package:s_plus/Home/home_background_decoration.dart';
 
 class ForumBody extends StatelessWidget {
   final String name;

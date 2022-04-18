@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:s_plus/Firestore/comments.dart';
-import 'package:s_plus/Firestore/forums.dart';
 import 'package:s_plus/Widgets/title_text.dart';
 import '../Home/home_page_light.dart';
 import '../Widgets/bottom_navigation.dart';
@@ -15,7 +14,6 @@ class AddComment extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Forum forum;
     String userName;
     List<Comments> forumComments = [];
     String forumComment = '';

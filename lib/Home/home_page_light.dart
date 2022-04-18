@@ -1,4 +1,3 @@
-import 'package:anim_search_bar/anim_search_bar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:s_plus/Widgets/grid_view.dart';
@@ -7,9 +6,7 @@ import 'package:s_plus/Widgets/bottom_navigation.dart';
 import 'package:s_plus/Widgets/drawer.dart';
 import 'package:s_plus/Widgets/switchhome.dart';
 import 'package:s_plus/theme_app/config.dart';
-import 'package:s_plus/pages/forum_page.dart';
 import '../Firestore/forums.dart';
-import 'package:s_plus/Widgets/search.dart';
 
 class HomeBackgroundDark extends StatefulWidget {
   const HomeBackgroundDark({Key? key}) : super(key: key);

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:s_plus/Home/home_background_decoration.dart';
 import 'package:s_plus/Widgets/bottom_navigation.dart';
 import 'package:s_plus/Widgets/drawer.dart';
 import 'package:s_plus/Widgets/switchhome.dart';

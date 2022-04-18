@@ -1,14 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:s_plus/Home/home_page_light.dart';
-//import 'package:s_plus/Login-Register/first_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:s_plus/Login-Register/first_page.dart';
-import 'package:s_plus/Login-Register/login_page.dart';
 import 'package:s_plus/theme_app/config.dart';
-import 'package:flex_color_scheme/flex_color_scheme.dart';
-import 'package:s_plus/pages/forum_page.dart';
-import 'package:s_plus/Widgets/switchhome.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

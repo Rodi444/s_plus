@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppColor{
 
-  static Color primarycolor = Color.fromARGB(255, 67, 71, 157);
+  static Color primarycolor = const Color.fromARGB(255, 67, 71, 157);
   static Color secondcolor = const Color.fromARGB(255, 118, 100, 196);
   static Color white = const Color.fromARGB(255, 255, 255, 255);
   static BoxDecoration gradient = BoxDecoration(
