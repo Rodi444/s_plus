@@ -5,6 +5,7 @@ import 'package:s_plus/Widgets/main_button.dart';
 import 'package:s_plus/Widgets/text_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:email_validator/email_validator.dart';
+import 'package:s_plus/Widgets/text_field_passoword.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -19,6 +20,11 @@ class RegisterPage extends StatelessWidget {
     return Container(
       decoration: CustomBoxDecoration.boxDecoration,
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          actions: const [],
+        ),
         backgroundColor: Colors.transparent,
         body: Center(
           child: Column(
@@ -47,13 +53,12 @@ class RegisterPage extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              GlobalTextField(
+              GlobalTextFieldPassword(
                 height: 50,
                 width: 280,
                 keyType: TextInputType.text,
                 fontSize: 16,
                 maxLines: 1,
-                isPassword: true,
                 hint: 'PASSWORD',
                 onChanged: (text) {
                   password = text;
@@ -62,13 +67,12 @@ class RegisterPage extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              GlobalTextField(
+              GlobalTextFieldPassword(
                   height: 50,
                   width: 280,
                   keyType: TextInputType.text,
                   fontSize: 16,
                   maxLines: 1,
-                  isPassword: false,
                   hint: 'CONFIRM PASSWORD',
                   onChanged: (text) {
                     confirmPassword = text;
